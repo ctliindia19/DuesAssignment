@@ -15,6 +15,8 @@ public class BaseClass {
 	
 	public static WebDriver driver;
 	protected static String overallRatingValue;
+	protected String url_amazon="";
+	protected String url_flipkart="";
 	
 	public static void switchWindow()
 	{

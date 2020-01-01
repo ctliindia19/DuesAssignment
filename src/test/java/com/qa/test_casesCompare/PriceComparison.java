@@ -28,7 +28,7 @@ public class PriceComparison extends BaseClass {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
-	@Test
+	@Test(priority=1)
 	public void testAmazon(){
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
@@ -37,13 +37,14 @@ public class PriceComparison extends BaseClass {
 		wait(2);
 		asp.selectSearchedItem();
 		switchWindow();
+		url_amazon = driver.getCurrentUrl();
 		wait(3);
 		AmazonProductPage app=new AmazonProductPage();
 		app.getItemPrice();
 		//driver.quit();
 	}
 	
-	@Test
+	@Test(priority=2)
 	public void testFlipkart(){
 		driver.get("https://www.flipkart.com/");
 		driver.manage().window().maximize();
@@ -54,18 +55,19 @@ public class PriceComparison extends BaseClass {
 		wait(2);
 		fsp.selectSearchedItemFlipkart();
 		switchWindow();
+		url_flipkart = driver.getCurrentUrl();
 		wait(3);
 		FlipkartProductPage fpp=new FlipkartProductPage(driver);
 		fpp.getItemPriceFlipkart();
 		if(FlipkartProductPage.double_itemPrice > AmazonProductPage.double_itemPrice){
-			System.out.println("Amazon has the lesser price of iPhone XR (64GB)-Yellow: "+AmazonProductPage.double_itemPrice);
+			System.out.println("Fllowing site having cheapest price: " +url_amazon+ " "+AmazonProductPage.double_itemPrice);
 		}
 		else {
-			System.out.println("Flipkart has the lesser price of iPhone XR (64GB)-Yellow: "+FlipkartProductPage.double_itemPrice);
+			System.out.println("Following site having cheapest price: "+ url_flipkart + " "+FlipkartProductPage.double_itemPrice);
 		}
 	}
 	
-	@Test
+	@Test(priority=3)
 	public void testTripadvisor(){
 		driver.get("https://www.tripadvisor.in/");
 		driver.manage().window().maximize();
