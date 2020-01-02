@@ -3,6 +3,7 @@ package com.qa.core;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -95,4 +96,15 @@ public class BaseClass {
 			return false;
 	    	}
 	}
+	    public void getOffsetValue(WebElement element, int x, int y){
+	    	Actions action = new Actions(driver);
+            //WebElement rating = driver.findElement(By.xpath("//span[@id='bubble_rating']"));
+            /*Point pt = rating.getLocation();
+            System.out.println("Location of element is = "+pt);
+            System.out.println("X-Offset = "+pt.getX());
+            System.out.println("Y-Offset = "+pt.getY());*/
+            //System.out.println("Number of options = "+element.getSize());
+            action.moveToElement(element).moveByOffset(x, y).click().build().perform();
+
+	    }
 }

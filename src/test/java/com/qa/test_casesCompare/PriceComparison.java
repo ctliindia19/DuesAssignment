@@ -3,6 +3,7 @@ package com.qa.test_casesCompare;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;

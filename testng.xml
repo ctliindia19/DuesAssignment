@@ -5,8 +5,8 @@
 	  <classes>
 		<class name="com.qa.test_casesCompare.PriceComparison">
 			<methods>
-		        <include name="testAmazon" />
-		        <include name="testFlipkart" />
+		        <exclude name="testAmazon" />
+		        <exclude name="testFlipkart" />
 		        <include name="testTripadvisor" />
 	      	</methods>
 	

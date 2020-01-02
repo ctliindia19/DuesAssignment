@@ -15,13 +15,13 @@ import com.qa.core.BaseClass;
 public class TripadvisorReviewPage extends BaseClass {
 	
 	
-	@FindBy(xpath="//div[@class='easyClear bigRatingParent']/span")
+	@FindBy(xpath="//span[@id='bubble_rating']")
 	public WebElement overallRating;
 	@FindBy(xpath="//input[@id='ReviewTitle']")
 	public WebElement reviewTitle;
 	@FindBy(id="ReviewText")
 	public WebElement yourReview;
-	@FindBy(id="noFraud")
+	@FindBy(xpath="//input[@class='checkbox']")
 	public WebElement txt_chkBox;
 	@FindBy(xpath="//div[text()='Hotel Ratings']")
 	public WebElement hotelRatings;
@@ -29,6 +29,10 @@ public class TripadvisorReviewPage extends BaseClass {
 	public WebElement serviceRating;
 	@FindBy(id="qid14_bubbles")
 	public WebElement cleanlinessRating;
+	@FindBy(id="qid190_bubbles")
+	public WebElement sleepQuaRating;
+	@FindBy(id="qid13_bubbles")
+	public WebElement valueRating;
 	@FindBy(id="qid11_bubbles")
 	public WebElement roomsRating;
 	
@@ -39,12 +43,15 @@ public class TripadvisorReviewPage extends BaseClass {
 	
 	public void addRating(){
 		//overallRatingValue=overallRating.getAttribute("data-value");
-		overallRatingValue=overallRating.getAttribute("class");
+//		overallRatingValue=overallRating.getAttribute("class");
 //		String[] rating_data = overallRatingValue.split("_");
 //		System.out.println(rating_data[2]);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('class','ui_bubble_rating fl bubble_50')", overallRating);
-		selectByMouseClick(overallRating);
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		//js.executeScript("arguments[0].setAttribute('class','ui_bubble_rating fl bubble_50')", overallRating);
+//		js.executeScript("arguments[0].setAttribute('data-value','5')", overallRating);
+//		selectByMouseClick(overallRating);
+		System.out.println("Number of options = "+overallRating.getSize());
+		getOffsetValue(overallRating,50,15);
 		
 //		String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('onmouseover');}";
 //		
@@ -58,23 +65,27 @@ public class TripadvisorReviewPage extends BaseClass {
 		
 		reviewTitle.sendKeys("Excellent");
 		yourReview.sendKeys("Excellent");
-		selectCheckBox(txt_chkBox);
+		
 		
 		if(isElementPresent(hotelRatings)==true){
-			JavascriptExecutor js1 = (JavascriptExecutor) driver;
-			js1.executeScript("arguments[0].setAttribute('class','answersBubbles ui_bubble_rating fl qid12 bubble_50')", serviceRating);
-			selectByMouseClick(serviceRating);
-			wait(1);
-			JavascriptExecutor js2 = (JavascriptExecutor) driver;
-			js2.executeScript("arguments[0].setAttribute('class','answersBubbles ui_bubble_rating fl qid14 bubble_50')", cleanlinessRating);
-			selectByMouseClick(cleanlinessRating);
-			wait(1);
-			JavascriptExecutor js3 = (JavascriptExecutor) driver;
-			js3.executeScript("arguments[0].setAttribute('class','answersBubbles ui_bubble_rating fl qid11 bubble_50')", roomsRating);
-			selectByMouseClick(roomsRating);
 			
-			
+			System.out.println("Number of options = "+serviceRating.getSize());
+			getOffsetValue(serviceRating, 50, 15);
+			wait(1);
+			System.out.println("Number of options = "+roomsRating.getSize());
+			getOffsetValue(roomsRating, 50,15);
+			wait(1);
+			System.out.println("Number of options = "+valueRating.getSize());
+			getOffsetValue(valueRating, 50,15);
+			wait(1);
+			System.out.println("Number of options = "+cleanlinessRating.getSize());
+			getOffsetValue(cleanlinessRating, 50,15);
+			wait(1);
+			System.out.println("Number of options = "+sleepQuaRating.getSize());
+			getOffsetValue(sleepQuaRating, 50,15);
 		}
+		wait(1);
+		selectCheckBox(txt_chkBox);
 		
 	}
 
