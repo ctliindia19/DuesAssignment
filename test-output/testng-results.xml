@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="TestSuite" duration-ms="109316" started-at="2020-01-02T12:32:31Z" finished-at="2020-01-02T12:34:21Z">
+  <suite name="TestSuite" duration-ms="189267" started-at="2020-01-16T10:28:07Z" finished-at="2020-01-16T10:31:16Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="109316" started-at="2020-01-02T12:32:31Z" finished-at="2020-01-02T12:34:21Z">
+    <test name="Test" duration-ms="189267" started-at="2020-01-16T10:28:07Z" finished-at="2020-01-16T10:31:16Z">
       <class name="com.qa.test_casesCompare.PriceComparison">
-        <test-method status="PASS" signature="browserSetup()[pri:0, instance:com.qa.test_casesCompare.PriceComparison@5e3a8624]" name="browserSetup" is-config="true" duration-ms="4056" started-at="2020-01-02T12:32:31Z" finished-at="2020-01-02T12:32:35Z">
+        <test-method status="PASS" signature="browserSetup()[pri:0, instance:com.qa.test_casesCompare.PriceComparison@5e3a8624]" name="browserSetup" is-config="true" duration-ms="6137" started-at="2020-01-16T10:28:07Z" finished-at="2020-01-16T10:28:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method status="PASS" signature="testTripadvisor()[pri:3, instance:com.qa.test_casesCompare.PriceComparison@5e3a8624]" name="testTripadvisor" duration-ms="104106" started-at="2020-01-02T12:32:35Z" finished-at="2020-01-02T12:34:20Z">
+        <test-method status="PASS" signature="testTripadvisor()[pri:3, instance:com.qa.test_casesCompare.PriceComparison@5e3a8624]" name="testTripadvisor" duration-ms="181628" started-at="2020-01-16T10:28:13Z" finished-at="2020-01-16T10:31:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTripadvisor -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.qa.test_casesCompare.PriceComparison@5e3a8624]" name="closeBrowser" is-config="true" duration-ms="1130" started-at="2020-01-02T12:34:20Z" finished-at="2020-01-02T12:34:21Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.qa.test_casesCompare.PriceComparison@5e3a8624]" name="closeBrowser" is-config="true" duration-ms="1485" started-at="2020-01-16T10:31:15Z" finished-at="2020-01-16T10:31:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
